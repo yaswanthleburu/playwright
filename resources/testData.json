@@ -1,0 +1,25 @@
+{
+    "TestData": {
+        "APIBASEURL": "https://reqres.in/",
+        "LISTOFUSERS": "api/users?page=2",
+        "REGISTER": "api/register",
+        "CREATUSER": "api/users",
+        "LOGIN": "api/login",
+        "DELAY": "api/users?delay=3",
+        "DETAILSOFPARTICULARUSER": "api/users/2",
+        "DELETE": "api/users/",
+        "NEXTPAGE": "api/users?page=",
+        "EMAIL": "michael.lawson@reqres.in",
+        "USEREMAIL": "janet.weaver@reqres.in",
+        "REGISTERDATA": {
+            "email": "eve.holt@reqres.in",
+            "password": "pistw"
+        },
+        "USERDATA": {
+            "name": "yaswanth",
+            "job": "leader"
+        },
+        "ID": "7",
+        "PAGE": "3"
+    }
+}

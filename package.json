@@ -1,13 +1,22 @@
 {
-  "name": "playwrightpo",
+  "name": "playwright",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "e2e-suite_01": "npx playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.37.1"
+    "@playwright/test": "^1.50.1",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^22.13.4",
+    "jest": "^26.6.3",
+    "jest-playwright-preset": "^1.4.5",
+    "playwright": "^1.8.0",
+    "ts-jest": "^26.5.0",
+    "typescript": "^4.1.3"
   }
 }
