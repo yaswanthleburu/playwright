@@ -37,7 +37,7 @@ test('GET API request', async ({ request }) => {
 
     await test.step('Create the user', async () => {
         console.log('==> Step-4 - Create the user');
-        const response = await CommonAPI.postRequest(request, TestData.APIBASEURL, TestData.CREATUSER, '', TestData.USERDATA, true, false);
+        const response = await CommonAPI.postRequest(request, TestData.APIBASEURL, TestData.CREATEUSER, '', TestData.USERDATA, true, false);
         expect(response.status()).toBe(201);
         console.log(await response.json());
         const responseData = await response.json();
