@@ -3,7 +3,7 @@
         "APIBASEURL": "https://reqres.in/",
         "LISTOFUSERS": "api/users?page=2",
         "REGISTER": "api/register",
-        "CREATUSER": "api/users",
+        "CREATEUSER": "api/users",
         "LOGIN": "api/login",
         "DELAY": "api/users?delay=3",
         "DETAILSOFPARTICULARUSER": "api/users/2",
