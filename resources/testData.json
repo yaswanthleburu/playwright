@@ -1,14 +1,15 @@
 {
     "TestData": {
         "APIBASEURL": "https://reqres.in/",
-        "LISTOFUSERS": "api/users?page=2",
-        "REGISTER": "api/register",
-        "CREATEUSER": "api/users",
-        "LOGIN": "api/login",
-        "DELAY": "api/users?delay=3",
-        "DETAILSOFPARTICULARUSER": "api/users/2",
-        "DELETE": "api/users/",
-        "NEXTPAGE": "api/users?page=",
+        "APIURL":"https://reqres.in/api/",
+        "LISTOFUSERS": "users?page=2",
+        "REGISTER": "register",
+        "CREATEUSER": "users",
+        "LOGIN": "login",
+        "DELAY": "users?delay=3",
+        "DETAILSOFPARTICULARUSER": "users/2",
+        "DELETE": "users/",
+        "NEXTPAGE": "users?page=",
         "EMAIL": "michael.lawson@reqres.in",
         "USEREMAIL": "janet.weaver@reqres.in",
         "REGISTERDATA": {

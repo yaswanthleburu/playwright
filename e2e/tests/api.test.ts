@@ -12,11 +12,12 @@ test('GET API request', async ({ request }) => {
         const response = await CommonAPI.getRequest(request, TestData.APIBASEURL, false, false);
         expect(response.status()).toBe(200);
         console.log("response", response);
+        console.log('==> Step-1 - Successfully launched browser and logged into application');
     });
 
     await test.step('Getting list of user', async () => {
         console.log('==> Step-2 - Getting list of user');
-        const response = await CommonAPI.getRequest(request, TestData.APIBASEURL, true, false, TestData.LISTOFUSERS);
+        const response = await CommonAPI.getRequest(request, TestData.APIURL, true, false, TestData.LISTOFUSERS);
         expect(response.status()).toBe(200);
         const responseData = await response.json();
         console.log("responseData", responseData);
@@ -26,18 +27,20 @@ test('GET API request', async ({ request }) => {
         const dataValue = data.email;
         console.log("dataValue", dataValue);
         expect(dataValue).toContain(TestData.EMAIL);
+        console.log('==> Step-2 - Successfully got list of user');
     });
 
     await test.step('Restring the user', async () => {
         console.log('==> Step-3 - Restring the user');
-        const response = await CommonAPI.postRequest(request, TestData.APIBASEURL, TestData.REGISTER, '', TestData.REGISTERDATA, true, false);
+        const response = await CommonAPI.postRequest(request, TestData.APIURL, TestData.REGISTER, '', TestData.REGISTERDATA, true, false);
         expect(response.status()).toBe(200);
         console.log(await response.json());
+        console.log('==> Step-3 - Successfully registered the user');
     });
 
     await test.step('Create the user', async () => {
         console.log('==> Step-4 - Create the user');
-        const response = await CommonAPI.postRequest(request, TestData.APIBASEURL, TestData.CREATEUSER, '', TestData.USERDATA, true, false);
+        const response = await CommonAPI.postRequest(request, TestData.APIURL, TestData.CREATEUSER, '', TestData.USERDATA, true, false);
         expect(response.status()).toBe(201);
         console.log(await response.json());
         const responseData = await response.json();
@@ -46,48 +49,54 @@ test('GET API request', async ({ request }) => {
         console.log("id", id);
         console.log('data', data);
         expect(data).toContain(TestData.USERDATA.name);
+        console.log('==> Step-4 - Successfully created the user');
     });
 
     await test.step('login the user', async () => {
         console.log('==> Step-5 - login the user');
-        const response = await CommonAPI.postRequest(request, TestData.APIBASEURL, TestData.LOGIN, '', TestData.REGISTERDATA, true, false);
+        const response = await CommonAPI.postRequest(request, TestData.APIURL, TestData.LOGIN, '', TestData.REGISTERDATA, true, false);
         expect(response.status()).toBe(200);
         console.log(await response.json());
+        console.log('==> Step-5 - Successfully logged into the user');
     });
 
     await test.step('Details of particular user', async () => {
-        console.log('==> Step-6 -Details of particular user');
-        const response = await CommonAPI.getRequest(request, TestData.APIBASEURL, true, false, TestData.DETAILSOFPARTICULARUSER);
+        console.log('==> Step-6 - Details of particular user');
+        const response = await CommonAPI.getRequest(request, TestData.APIURL, true, false, TestData.DETAILSOFPARTICULARUSER);
         expect(response.status()).toBe(200);
         console.log(await response.json());
         const responseData = await response.json();
         const data = responseData.data.email;
         console.log('data', data);
         expect(data).toContain(TestData.USEREMAIL);
+        console.log('==> Step-6 - Successfully got the details of particular user');
     });
 
     await test.step('Delay user', async () => {
         console.log('==> Step-7 - Delay user');
-        const response = await CommonAPI.getRequest(request, TestData.APIBASEURL, true, false, TestData.DELAY);
+        const response = await CommonAPI.getRequest(request, TestData.APIURL, true, false, TestData.DELAY);
         expect(response.status()).toBe(200);
         console.log(await response.json());
+        console.log('==> Step-7 - Successfully Delayed the user');
     });
 
     await test.step('Next Page', async () => {
         console.log('==> Step-8 - next page');
-        const response = await CommonAPI.getRequest(request, TestData.APIBASEURL, false, true, TestData.NEXTPAGE, TestData.PAGE);
+        const response = await CommonAPI.getRequest(request, TestData.APIURL, false, true, TestData.NEXTPAGE, TestData.PAGE);
         console.log(await response.json());
         const responseData = await response.json();
         const nextPage = responseData.page;
         console.log('nextPage', nextPage);
         expect(response.status()).toBe(200);
         expect(nextPage).toBeGreaterThan(page);
+        console.log('==> Step-8 - Successfully navigate to next page');
     });
 
     await test.step('Delete user', async () => {
         console.log('==> Step-9 - delete user');
-        const response = await CommonAPI.deleteRequest(request, TestData.APIBASEURL, TestData.DELETE, id);
+        const response = await CommonAPI.deleteRequest(request, TestData.APIURL, TestData.DELETE, id);
         console.log('deleted User ID', id);
         expect(response.status()).toBe(204);
+        console.log('==> Step-9 - Successfully deleted user');
     });
 });
